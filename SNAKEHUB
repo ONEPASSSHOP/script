@@ -1,0 +1,11 @@
+    local AutoFarm = Tab:CreateSector("AutoFarm","left")
+    AutoFarm:AddLabel("AutoFarm level")
+    Weapon = {}
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren())) do
+          if v:IsA"Tool" then
+              table.insert(Weapon,v.Name)
+    end
+end
+    AutoFarm:AddDropdown("Select Weapon",Weapon,"Select Weapon",true,function(t)
+             _G.SelectWeapon = t
+    end)
