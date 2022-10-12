@@ -73,9 +73,8 @@ MobFarmSection:NewToggle("Start Mob Farm", "Toggles the autofarming of the mobs"
     end
 end)
 
-local Section = Tab:NewSection("FastAttack")
-Section:NewToggle("FastAttack", "Click to use FastAttack", function(state)
-_G.Fastattack = state -- true\false
+MobFarmSection:NewToggle("FastAttack", "Open fast attack", function(state)
+    _G.Fastattack = state -- true\false
 game:GetService("RunService").RenderStepped:Connect(function()
     pcall(function()
         if _G.Fastattack then
@@ -88,7 +87,6 @@ end
 end)
 end)
 end)
-
 
 -- UPDATE MOBS
 
